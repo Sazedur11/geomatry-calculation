@@ -5,6 +5,8 @@ function calculatePentagonArea(){
 
     const pentagonArea = document.getElementById('pentagon-area');
     pentagonArea.innerText = pentagonResult;
+
+    getPentagonResult()
 }
 
 function getPentagonNumber(element){
@@ -14,4 +16,12 @@ function getPentagonNumber(element){
     pentagonInput.value = '';
 
     return pentagon;
+}
+
+function getPentagonResult(){
+    const areaCalculation = document.getElementById('calculation-area');
+    const p = document.createElement('p');
+    const pentagonResultArea = document.getElementById('pentagon-result-area').innerHTML;
+    p.innerHTML = pentagonResultArea;
+    areaCalculation.appendChild(p)
 }

@@ -5,6 +5,8 @@ function calculateEllipseArea(){
 
     const ellipseArea = document.getElementById('ellipse-area');
     ellipseArea.innerText = ellipseResult;
+
+    getEllipseResult()
 }
 
 function getEllipseNumber(element){
@@ -13,4 +15,12 @@ function getEllipseNumber(element){
     const ellipse = parseFloat(ellipseNum);
     ellipseInput.value = '';
     return(ellipse);
+}
+
+function getEllipseResult(){
+    const areaCalculation = document.getElementById('calculation-area');
+    const p = document.createElement('p');
+    const ellipseResultArea = document.getElementById('ellipse-result-area').innerHTML;
+    p.innerHTML = ellipseResultArea;
+    areaCalculation.appendChild(p);
 }

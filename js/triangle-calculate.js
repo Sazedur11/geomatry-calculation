@@ -14,4 +14,12 @@ function calculateTriangleArea(){
 
     triangleBaseInput.value = '';
     triangleHeightInput.value = '';
+
+    //Show the result in Calculation area
+    const areaCalculation = document.getElementById('calculation-area');
+    const p = document.createElement('p');
+    const triangleResultArea = document.getElementById('triangle-result-area').innerHTML;
+    p.innerHTML =triangleResultArea;
+    areaCalculation.appendChild(p);
+
 }

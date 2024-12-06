@@ -7,9 +7,26 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="m-8">
-    <header>
-
+<body class="ml-8 mr-8">
+    <header class="mb-8">
+      <div class="navbar bg-base-100 bg-[#1090D81A] rounded-b-lg">
+        <div class="flex-1">
+          <a class="btn btn-ghost text-xl">Geomatri info</a>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1">
+            <li><a class="bg-blue-500 text-white font-bold">Blog</a></li>
+            <li>
+              <details>
+                <summary>Parent</summary>
+                <ul class="bg-base-100 rounded-t-none p-2">
+                  <li><a>Blog 1</a></li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
     <main>
        <!--Main container-->
@@ -33,7 +50,7 @@
                     <span>cm</span>
                   </div>
                   <div>
-                    <p class="text-2xl">Area: <span id="area">0</span><span>cm<sup>2</sup></span></p>
+                    <p id="triangle-result-area" class="text-2xl">Triangle: <span id="area">0</span><span>cm<sup>2</sup></span></p>
                   </div>
                   <div class="card-actions justify-end">
                     <button onclick="calculateTriangleArea()" class="btn btn-info text-cyan-50 w-full">Calculate</button>
@@ -55,7 +72,7 @@
                     <input id="rectangle-length" class="w-20 text-1xl rounded-sm border-2 border-gray-400" type="text" placeholder="i"> <span>cm</span>
                   </div>
                   <div>
-                    <p class="text-2xl">Area: <span id="rectangle-area">0</span><span>cm<sup>2</sup></span></p>
+                    <p id="ractangle-result" class="text-2xl">Ractangle: <span id="rectangle-area">0</span><span>cm<sup>2</sup></span></p>
                   </div>
                   <div class="card-actions justify-end">
                     <button onclick="calculateRectanglearea()" class="btn btn-info text-white w-full">Calculate</button>
@@ -99,7 +116,7 @@
                     <input id="rhombus-d2" type="text" placeholder="d2" class="w-20 text-1xl rounded-sm border-2 border-gray-400"> <span>cm</span>
                   </div>
                   <div>
-                    <p class="text-2xl">Area: <span id="rhombus-area">0</span><span> cm<sup>2</sup></span></p>
+                    <p id="rhombus-result" class="text-2xl">Rhombus: <span id="rhombus-area">0</span><span> cm<sup>2</sup></span></p>
                   </div>
                   <div class="card-actions justify-end">
                     <button onclick="calculateRhombusArea()" class="btn btn-info text-white w-full">Calculate</button>
@@ -121,14 +138,14 @@
                     <input id="apothem-area" class="w-20 text-1xl rounded-sm border-2 border-gray-400" type="text" placeholder="a"> <span>cm</span>
                   </div>
                   <div>
-                    <p class="text-2xl">Area: <span id="pentagon-area">0</span><span> cm<sup>2</sup></span></p>
+                    <p id="pentagon-result-area" class="text-2xl">Pentagon: <span id="pentagon-area">0</span><span> cm<sup>2</sup></span></p>
                   </div>
                   <div class="card-actions justify-end">
                     <button onclick="calculatePentagonArea()" class="btn btn-info w-full text-white">Calculate</button>
                   </div>
                 </div>
               </div>
-              <!------------------------Ellipse Card----------------------------->
+              <!---------------------Ellipse Card-------------------------->
               <div class="card bg-base-100 hover:bg-red-300 shadow-xl">
                 <figure class="p-4">
                   <img
@@ -143,7 +160,7 @@
                     <input id="ellipse-b" class="w-20 text-1xl rounded-sm border-2 border-gray-400" type="text" placeholder="b"> <span>cm</span>
                   </div>
                   <div>
-                    <p class="text-2xl">Area: <span id="ellipse-area">0</span><span> cm<sup>2</sup></span></p>
+                    <p id="ellipse-result-area" class="text-2xl">Ellipse: <span id="ellipse-area">0</span><span> cm<sup>2</sup></span></p>
                   </div>
                   <div class="card-actions justify-end">
                     <button onclick="calculateEllipseArea()" class="btn btn-info w-full text-white">Calculate</button>
@@ -152,8 +169,8 @@
               </div>
         </div>
         <!---area calculation container-->
-        <div class="w-96 border-2 border-gray-700">
-            <h3 class="text-3xl text-center p-4">Area Calculation</h3>
+        <div id="calculation-area" class="w-96 pl-6 border-2 border-gray-300 rounded-md">
+            <h3 class="text-3xl text-center p-4 underline decoration-gray-300">Area Calculation</h3>
         </div>
        </div>
     </main>

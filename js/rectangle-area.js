@@ -13,5 +13,15 @@ function calculateRectanglearea(){
     rectangleAreaResult.innerText = result;
 
     rectangleWidthInput.value = '';
-    rectangleLengthInput.value = ''
+    rectangleLengthInput.value = '';
+
+    //show the result in calculation area
+    const areaCalculation = document.getElementById('calculation-area');
+    const p = document.createElement('p');
+    const ractangleResult = document.getElementById('ractangle-result').innerHTML;
+    p.innerHTML = ractangleResult;
+    // const span = document.createElement('span');
+    // span.innerHTML = `<span>cm<sup>2</sup></span>`;
+    // p.innerHTML = 'Ractangle: ' + result + span.innerHTML;
+    areaCalculation.appendChild(p)
 }
